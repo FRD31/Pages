@@ -3,105 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medicina Naturista</title>
+    <title>A la Luna</title>
     <style>
         body {
-            background-color: #000;
-            color: #ff0;
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        }
-
-        header {
+            background-color: black;
+            overflow: hidden;
+            color: white;
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            padding: 20px;
-            background-color: #000;
-            border-bottom: 2px solid #ff0;
         }
-
-        header h1 {
-            color: #ff0;
-            font-size: 2.5em;
+        .moon {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background-color: #f0e68c;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            animation: moveMoon 10s infinite;
         }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
+        .rocket {
+            position: absolute;
+            bottom: -100px;
+            left: 50%;
+            width: 50px;
+            height: 100px;
+            background-color: red;
+            transform: translateX(-50%);
+            animation: moveRocket 10s infinite;
         }
-
-        nav ul li {
-            margin: 0 15px;
+        .rocket:before, .rocket:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
         }
-
-        nav ul li a {
-            color: #ff0;
-            text-decoration: none;
-            font-size: 1.2em;
+        .rocket:before {
+            border-width: 0 25px 50px 25px;
+            border-color: transparent transparent white transparent;
+            top: -50px;
+            left: 0;
         }
-
-        nav ul li a:hover {
-            color: #daa520;
+        .rocket:after {
+            border-width: 0 25px 25px 25px;
+            border-color: white transparent transparent transparent;
+            bottom: -25px;
+            left: 0;
         }
-
-        main {
-            padding: 20px;
+        @keyframes moveMoon {
+            0% { top: -200px; }
+            50% { top: 20%; }
+            100% { top: -200px; }
         }
-
-        main section {
-            margin-bottom: 40px;
+        @keyframes moveRocket {
+            0% { bottom: -100px; }
+            50% { bottom: 60%; }
+            100% { bottom: -100px; }
         }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #000;
-            border-top: 2px solid #ff0;
-        }
-
-        footer p {
-            margin: 0;
-            color: #ff0;
-            font-size: 1em;
+        .message {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Bienvenido a Medicina Naturista</h1>
-        <nav>
-            <ul class="menu">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#products">Productos</a></li>
-                <li><a href="#about">Acerca de</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <h2>Descubre el poder de la medicina natural</h2>
-            <p>En nuestra tienda, encontrarás una amplia variedad de productos naturales que te ayudarán a mejorar tu salud y bienestar.</p>
-        </section>
-        <section id="products">
-            <h2>Productos Destacados</h2>
-            <!-- Aquí puedes añadir tus productos -->
-        </section>
-        <section id="about">
-            <h2>Acerca de Nosotros</h2>
-            <p>Somos una empresa dedicada a ofrecer productos de medicina naturista de la más alta calidad.</p>
-        </section>
-        <section id="contact">
-            <h2>Contacto</h2>
-            <p>Para más información, contáctanos a través de nuestro formulario de contacto.</p>
-            <!-- Aquí puedes añadir un formulario de contacto -->
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Medicina Naturista. Todos los derechos reservados.</p>
-    </footer>
+    <div class="moon"></div>
+    <div class="rocket"></div>
+    <div class="message">
+        <p>Amisaday, no te prometí la luna, ¡te llevaré a ella!</p>
+    </div>
 </body>
 </html>
